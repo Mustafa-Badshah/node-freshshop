@@ -1,0 +1,36 @@
+<!-- Body Section Start -->
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 log-user offset-md-4">
+                <!-- <div class="alert alert-danger">
+                    <%= errMsg %> <a data-dismiss="alert" href="#" class="close">x</a>
+                </div> -->
+                <h2>Login Your Account</h2>
+                <form action="/login" method="post">
+                    <div class="form-group justify-content-center">
+                        <label for="">Email/User Name</label>
+                        <input type="text" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="User Name">
+                        <div class="log-forgot">
+                            <a href="/profile">Forgot Password</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-success btn-block">Login</button>
+                    <p>Don't Have An Account?</p>
+                    <div class="log-sing">
+                        <a href="/singin">Sing In</a>
+
+                        <div class="mt-5 mb-5 text-danger">
+                            <%= errMsg %>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Body Section End -->

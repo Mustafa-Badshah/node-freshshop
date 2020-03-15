@@ -1,0 +1,55 @@
+<div class="container text-center">
+    <h3>Users Infomations</h3>
+</div>
+
+
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-bordered">
+                <tr>
+                    <th class="head-color">S.No</th>
+                    <th class="head-color">Email</th>
+                    <th class="head-color">Gender</th>
+                    <th class="head-color">City</th>
+                    <th class="head-color">Address</th>
+                    <th class="head-color">Status</th>
+                    <th class="head-color">Change Status</th>
+                </tr>
+                <% user.forEach(function(x,n){ 
+                    if(x.status==1)
+                        var status = "Active";
+                    else
+                        var status = "Deactive";
+                    %>
+                    <tr>
+                        <td>
+                            <%= n+1 %>
+                        </td>
+                        <td>
+                            <%= x.email %>
+                        </td>
+                        <td>
+                            <%= x.gender  %>
+                        </td>
+                        <td>
+                            <%= x.city %>
+                        </td>
+                        <td>
+                            <%= x.address %>
+                        </td>
+                        <td>
+                            <%= status %>
+                        </td>
+                        <td><a href="/admin/users/<%= x._id %>/<%= x.status %>" class="btn btn-sm btn-warning">Change</a></td>
+                    </tr>
+
+                    <% }) %>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>Freshshop E-Commerce in bootstap</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightslider.css">
+    <link rel="stylesheet" type="text/css" href="/css/freshshop.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-nav sticky-top ">
+        <a href="#" class="navbar-brand">Admin Panel
+            <!-- <img src="images/logo.png"> -->
+        </a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        <% if(session.is_admin_logged_in){ %>
+            <div id="mynavbar" class="collapse navbar-collapse justify-content-center">
+                <ul class="nav navbar-nav">
+                    <li class="navbar-item">
+                        <a href="/admin/dashboard" class="nav-link pl-4 hover-color">Dashboard</a>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <!-- <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown">Product</a> -->
+                        <a href="#" class="nav-link dropdown-toggle pl-4 hover-color" data-toggle="dropdown">Product</a>
+                        <div class="dropdown-menu">
+                            <a href="/admin/product" class="dropdown-item">Add</a>
+                            <a href="/admin/product/view" class="dropdown-item">View</a>
+                        </div>
+                    </li>
+                    <li class="navbar-item dropdown">
+                        <!-- <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown">Product</a> -->
+                        <a href="#" class="nav-link dropdown-toggle pl-4 hover-color" data-toggle="dropdown">Catagory</a>
+                        <div class="dropdown-menu">
+                            <a href="/admin/catagory" class="dropdown-item">Add</a>
+                            <a href="/admin/catagory/view" class="dropdown-item">View</a>
+                        </div>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="/admin/users" class="nav-link pl-4 hover-color">User Info</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="/admin/logout" class="nav-link pl-4 hover-color">Logout</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <% } %>
+    </nav>
+
+    <%- include(pagename); %>
+
+        <script src="/js/jquery.js "></script>
+        <script src="/js/bootstrap.bundle.js "></script>
+        <script src="/js/lightslider.js "></script>
+</body>
+
+</html>

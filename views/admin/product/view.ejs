@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 h3-color">
+            <h3>View Product</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="head-color">S.No</th>
+                    <th class="head-color">Product</th>
+
+                    <th class="head-color">Price</th>
+                    <!-- <th class="head-color">Category</th> -->
+                    <th class="head-color">Discount</th>
+                    <th class="head-color">Edit</th>
+                    <th class="head-color">Delete</th>
+                </tr>
+                <% Product.forEach(function(x,n){ %>
+                    <tr>
+                        <td>
+                            <%= n+1 %>
+                        </td>
+                        <td>
+                            <%= x.product_title %>
+                        </td>
+                        <td>
+                            <%=x.product_price %>
+                        </td>
+                        <!-- <td>
+                            <%=x.product_category %>
+                        </td> -->
+                        <td>
+                            <%=x.product_discount %>
+                        </td>
+                        <td><a href="/admin/product/edit/<%= x._id %>" class="btn btn-sm btn-sm-color">Edit</a></td>
+                        <td><a href="/admin/product/delete?id=<%= x._id %>" class="btn btn-sm btn-sm-color">Delete</a></td>
+                    </tr>
+                    <%})%>
+
+            </table>
+        </div>
+    </div>
+</div>

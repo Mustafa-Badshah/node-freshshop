@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 h3-color">
+            <h3>View All Categories</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <th class="head-color">S.No.</th>
+                    <th class="head-color">Catagory Name</th>
+                    <th class="head-color">Edit</th>
+                    <th class="head-color">Delete</th>
+                </tr>
+                <% catagory.forEach(function(x, n){ %>
+                    <tr>
+                        <td class="text-dark">
+                            <%= n+1 %>
+                        </td>
+                        <td class="text-dark">
+                            <%= x.category_name %>
+                        </td>
+                        <td><a href="/admin/catagory/edit/<%= x._id%>" class="btn btn-sm btn-sm-color">Edit</a></a>
+                        </td>
+                        <td><a href="/admin/catagory/delete?id=<%= x._id %>" class="btn btn-sm btn-sm-color">Delete</a></a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </table>
+        </div>
+    </div>
+</div>

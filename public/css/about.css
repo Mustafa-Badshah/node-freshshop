@@ -1,0 +1,26 @@
+.border-color{
+	color: #DFDFDF !important;
+}
+.brand-p {
+    height: 33px;
+    padding-left: 120px;
+}
+.navbar-text-color {
+    color: #666;
+    display: inline-block;
+    word-spacing: 0px;
+    font-family: serif;
+    font-size: 16px;
+}
+.navbar-login {
+    float: right;
+    color: #666;
+    font-family: serif;
+    line-height: 23px;
+    font-size: 16px;
+}
+.li-20 {
+    list-style: none;
+    padding-right: 60px;
+    cursor: pointer;
+}

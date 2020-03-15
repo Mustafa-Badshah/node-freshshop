@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>Freshshop E-Commerce in bootstap</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightslider.css">
+    <link rel="stylesheet" type="text/css" href="/css/freshshop.css">
+</head>
+
+<body>
+    <!-- Header Section Start -->
+    <div class="container-fuild">
+        <div class="log-header">
+            <ul class="nav justify-content-end">
+                <% if(session.is_user_logged_in)
+                { %>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <%= session.name %>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/profile" class="nav-link"><i class="fa fa-sign-in pr-1" aria-hidden="true"></i>
+        Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link"><i class="fa fa-user-plus pr-1" aria-hidden="true"></i>Logout</a>
+                    </li>
+                    <% }
+                else
+                { %>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link"><i class="fa fa-sign-in pr-1" aria-hidden="true"></i>
+Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/singin" class="nav-link"><i class="fa fa-user-plus pr-1" aria-hidden="true"></i>Sing Up</a>
+                        </li>
+
+                        <% } %>
+
+            </ul>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-light bg-nav sticky-top ">
+        <a href="#" class="navbar-brand">
+            <img src="<%= logo %>">
+        </a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mynavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+        <div id="mynavbar" class="collapse navbar-collapse justify-content-center">
+            <ul class="nav navbar-nav">
+                <li class="navbar-item">
+                    <a href="/" class="nav-link pl-4 hover-color">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/Aboutus" class="nav-link pl-4 hover-color">About Us</a>
+                </li>
+                <li class="navbar-item dropdown">
+                    <a href="#" class="nav-link pl-4 dropdown-toggle hover-color" data-toggle="dropdown">shop</a>
+                    <ul class="dropdown-menu bg-dropdown-menu">
+                        <li><a href="shop.html">Sidebar Shop</a></li>
+                        <li><a href="shop-detail.html">Shop Detail</a></li>
+                        <li><a href="/shop/cart">Cart</a></li>
+                        <li><a href="/shop/checkout">Checkout</a></li>
+                        <li><a href="my-account.html">My Account</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-item">
+                    <a href="/gallery" class="nav-link pl-4 hover-color">Gallery</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/contact" class="nav-link pl-4 hover-color">Contact</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="nav-link pl-4 hover-color"><i class="fa fa-search" aria-hidden="true"></i></a>
+                </li>
+                <li class="navbar-item ">
+                    <a href="#" class="nav-link pl-4 hover-color"><i class="fa fa-shopping-bag hover-color" aria-hidden="true"></i>Mycart<span class="badge badge-pill badge-info">0</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Header Section End -->
+    <%- include(pagename); %>
+        <% if(lightslider){ %>
+            <%- include(lightslider); %>
+                <% } %>
+                    <!-- Footer Section -->
+
+                    <div class="container-fuild bg-color " style="background-color: #020201 ">
+                        <div class="container ">
+                            <div class="row ">
+                                <div class="col-md-4 col-sm-4 footer-busines ">
+                                    <h3>Business Time</h3>
+                                    <Br>
+                                    <p>Monday - Friday: 08.00am to 05.00pm</p>
+                                    <p>Saturday: 10.00am to 08.00pm
+                                        <p>
+                                            <p>Sunday: Closed</p>
+                                </div>
+                                <div class="col-md-4 col-sm-4 footer-newsletter ">
+                                    <h3>Newsletters</h3>
+                                    <form>
+                                        <div class="form-group newsletter-form ">
+                                            <input class="text-w " type="text " placeholder=" Email Address ">
+                                            <i class=" fa fa-envelope " aria-hidden="true "></i>
+                                        </div>
+                                        <button class="btn btn-hover text-white btn-sm ">Submit</button>
+                                    </form>
+                                </div>
+                                <div class="col-md-4 col-sm-4 footer-social-media ">
+                                    <h3>Social Media</h3>
+                                    <p class="p-pt ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <i class="fa fa-facebook-square font-size social-hover " aria-hidden="true "></i>
+                                    <i class="fa fa-twitter font-size social-hover " aria-hidden="true "></i>
+                                    <i class="fa fa-instagram font-size social-hover " aria-hidden="true "></i>
+                                    <i class="fa fa-google-plus-official font-size social-hover " aria-hidden="true "></i>
+                                    <i class="fa fa-pinterest-p font-size social-hover " aria-hidden="true "></i>
+                                    <i class="fa fa-rss font-size social-hover " aria-hidden="true "></i>
+                                    <i class="fa fa-whatsapp font-size social-hover " aria-hidden="true "></i>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="row ">
+                                <div class="col-md-4 col-sm-4 ">
+                                    <div class="footer-widget ">
+                                        <h4>About Freshshop</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Except</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 ">
+                                    <div class="footer-link ">
+                                        <h4>Informaition</h4>
+                                        <ul>
+                                            <li>
+                                                <a href="# ">About Us</a>
+                                            </li>
+                                            <li>
+                                                <a href="# ">Customer Service</a>
+                                            </li>
+                                            <li>
+                                                <a href="# ">Our Sitemap</a>
+                                            </li>
+                                            <li>
+                                                <a href="# ">Terms & Condition</a>
+                                            </li>
+                                            <li>
+                                                <a href="# ">Privacy Policy</a>
+                                            </li>
+                                            <li>
+                                                <a href="# ">Delevery Information</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 ">
+                                    <div class="footer-contact ">
+                                        <h4>Contact Us</h4>
+                                        <p><i class="fa fa-map-marker text-white " aria-hidden="true "></i>Address: Michael I. Days 3756<br> Preston Street Wichita,
+                                            <Br> KS 67213</p>
+                                        <p><i class="fa fa-phone text-white " aria-hidden="true "></i>Phone : +919862621762</p>
+                                        <p><i class=" fa fa-envelope " aria-hidden="true "></i>Email: Contactinfo@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="container-fuild bg-color ">
+                        <div class="container ">
+                            <div class="end-footer ">
+                                <p>All Rights Reserved. © 2018 ThewayShop Design By : html design</p>
+                                <h6>DESIGNE BY:- MUSTAFA BADSHAH</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="js/jquery.js "></script>
+                    <script src="js/bootstrap.bundle.js "></script>
+                    <script src="js/lightslider.js "></script>
+                    <script>
+                        $(document).ready(function() {
+                            $(".content-slider ").lightSlider({
+                                loop: true,
+                                item: 5,
+                                auto: true,
+                                pager: false,
+                                slideMargin: 0,
+                                keyPress: true
+                            });
+                        });
+                    </script>
+</body>
+
+</html>

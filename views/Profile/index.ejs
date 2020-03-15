@@ -1,0 +1,86 @@
+<h3 class="text-center mt-4 mb-4">Welcome to Profile Page
+    <%= session.name %>
+</h3>
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 profile-style">
+            <% 
+        if(user.image){
+           var path = "/user_profile/"+user.image;
+        } 
+        else {
+            var path ="/images/default-avatar-250x250.png";
+        }
+        
+        %>
+
+                <img src="<%= path %>" class="proifle-img-style" />
+
+                <a href="/profile/changeimage" class="profile-a-style ">Edit Your Profile</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 offset-md-4">
+    <table class="table table-bordered table-hover ">
+        <tr>
+            <td>Full Name</td>
+            <td>
+                <%= user.f_name %>
+            </td>
+        </tr>
+        <tr>
+            <td>User Name</td>
+            <td>
+                <%= user.u_name %>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <%= user.email %>
+            </td>
+        </tr>
+
+        <!-- <tr>
+            <td>Password</td>
+            <td>
+                <%= user.password %>
+            </td>
+        </tr> -->
+        <tr>
+            <td>Gender</td>
+            <td>
+                <%= user.gender %>
+            </td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>
+                <%= user.city %>
+            </td>
+        </tr>
+        <tr>
+            <td>Contact</td>
+            <td>
+                <%= user.contact %>
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>
+                <%= user.address %>
+            </td>
+        </tr>
+
+    </table>
+    <a href="/profile/edit" class="btn btn-info profile-button style">Edit Your Profile</a>
+    <a href="profile/changepassword" class="btn btn-info profile-button style">Change Password</a>
+</div>
